@@ -19,15 +19,12 @@ def lonelyinteger(a):
     n = len(a)
     if (n==1):
         return a[0]
-    if a[n-1] != a[n-2]:
-        return a[n-1]
         
-    for i in range(0,len(a),2):
+    for i in range(0,n,2):
+        if i == n - 1:
+            return a[i]
         if a[i] != a[i+1]:
-            if (a[i+1]==a[i+2]):
-                return (a[i])
-            else:
-                return (a[i+1])
+            return a[i]
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
